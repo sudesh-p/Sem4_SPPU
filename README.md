@@ -9,6 +9,5 @@ Please follow the SPPU Assignment Code Nomenclature in the Readme file to make i
 
 #### ADSL
 #### CGL
-Assignment 1 : https://youtu.be/W5P8GlaEOSI (DDA)
-Assignment 1 : https://youtu.be/RGB-wlatStc (Bresenham)
+Assignment 1 : https://youtu.be/W5P8GlaEOSI (DDA) https://youtu.be/RGB-wlatStc (Bresenham)
 #### MPL
