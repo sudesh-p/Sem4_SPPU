@@ -7,6 +7,8 @@ Construct a tree and print the nodes.
 #include<stdio.h>
 #include<queue>
 using namespace std;
+
+
 class Tree
   {
      typedef struct node
@@ -22,10 +24,14 @@ class Tree
       void insert(btree *root,btree *New);
       void display();
   };
+
+
 Tree::Tree()
   {
     root=NULL;
   }
+
+// Function to create a new Tree root
 
 void Tree::create()
   {
@@ -42,6 +48,8 @@ void Tree::create()
 		insert(root,New);
         }
    }
+
+// Function to Insert a new node in the Tree
 
 void Tree::insert(btree *root,btree *New)
   {
@@ -63,6 +71,8 @@ void Tree::insert(btree *root,btree *New)
                 insert(root->right,New);
 	}	
   }  
+
+// Function to display the Tree in BFS
 
 void Tree::display()
 {
@@ -95,7 +105,7 @@ void Tree::display()
           }
 }
 				       
-
+// Main Function
 
 int main()
   {
