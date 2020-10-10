@@ -17,6 +17,7 @@ class graph
    		graph();
         void create();
         void display();
+	void addNode(int, int);
         
 };
  
@@ -31,19 +32,7 @@ graph::graph()
   }
 }
 
-
-
-void graph::create()
-{
- int s,d;
- char ans;
- do
- {
-  cout<<"\n\tEnter the source vertices: ";
-  cin>>s;
-  cout<<"\n\tEnter the destination vertices: ";
-  cin>>d;
-  
+void graph::addNode(int s, int d) {
   New=new Node;
   New->data=d;
   New->next=NULL;
@@ -61,24 +50,22 @@ void graph::create()
      }
    temp->next=New;
    }
+}
 
-  New=new Node;
-  New->data=s;
-  New->next=NULL;
-  if(list[d]->next==NULL)
-	{
-	  list[d]->data=d;
-	  list[d]->next=New;
-     }  
-  else
-   {
-     temp=list[d]->next;
-	while(temp->next!=NULL)
-	  {
-		temp=temp->next;
-        }
-	temp->next=New;
-   }
+void graph::create()
+{
+ int s,d;
+ char ans;
+ do
+ {
+  cout<<"\n\tEnter the source vertices: ";
+  cin>>s;
+  cout<<"\n\tEnter the destination vertices: ";
+  cin>>d;
+ 
+  addNode(s,d);
+  addNode(d,s);
+	 
   cout<<"Do you want to continue: ";
   cin>>ans;
  }while(ans=='y');
@@ -119,13 +106,14 @@ void graph::display()
      {
       case 1:
              gr.create();
-             gr.display();
-			 break;
+             break;
       case 2:
-             
+             gr.display();
              break;
       case 3: 
- 			 break;
+ 	     break;
+      default:
+	     cout<<"Inavlid choice!";
     }
    cout<<"Do you want to continue: ";
    cin>>ans;      
@@ -136,52 +124,64 @@ void graph::display()
 /* op
 
 
-	***** Adjacency List *****
-	1.Create
-	2. Display
-	3. Exit
-	.....Enter Your Choice: 1
+***** Adjacency List *****
+        1.Create
+        2. Display
+        3. Exit
+        .....Enter Your Choice: 1 
 
-	Enter the source vertices: 1
+        Enter the source vertices: 1
 
-	Enter the destination vertices: 2
+        Enter the destination vertices: 2
 Do you want to continue: y
 
-	Enter the source vertices: 1
+        Enter the source vertices: 1
 
-	Enter the destination vertices: 3
+        Enter the destination vertices: 3
 Do you want to continue: y
 
-	Enter the source vertices: 1
+        Enter the source vertices: 1 
 
-	Enter the destination vertices: 4
+        Enter the destination vertices: 4
 Do you want to continue: y
 
-	Enter the source vertices: 2
+        Enter the source vertices: 2
 
-	Enter the destination vertices: 4
+        Enter the destination vertices: 4
 Do you want to continue: y
 
-	Enter the source vertices: 3
+        Enter the source vertices: 3
 
-	Enter the destination vertices: 4
+        Enter the destination vertices: 4
 Do you want to continue: y
 
-	Enter the source vertices: 3
+        Enter the source vertices: 3
 
-	Enter the destination vertices: 5
+        Enter the destination vertices: 5
 Do you want to continue: y
 
-	Enter the source vertices: 4
+        Enter the source vertices: 4
 
-	Enter the destination vertices: 5
+        Enter the destination vertices: 5
 Do you want to continue: n
+Do you want to continue: y
 
-	**** Adj. List *****
+        ***** Adjacency List *****
+        1.Create
+        2. Display
+        3. Exit
+        .....Enter Your Choice: 2
 
+        **** Adj. List *****
+_
 |1| -> 2 ->3 ->4 ->NULL
+_
 |2| -> 1 ->4 ->NULL
+_
 |3| -> 1 ->4 ->5 ->NULL
+_
 |4| -> 1 ->2 ->3 ->5 ->NULL
-|5| -> 3 ->4 ->NULLDo you want to continue: n 
-*/
+_
+|5| -> 3 ->4 ->NULL
+ _
+Do you want to continue: n
