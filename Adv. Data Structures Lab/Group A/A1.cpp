@@ -13,7 +13,7 @@ class Tree
   {
      typedef struct node
 	{
-		char data[10];
+		char data[15];
 		struct node *left;
 		struct node * right;
 	}btree;
@@ -109,32 +109,32 @@ void Tree::display()
 
 int main()
   {
-     Tree tr;
+     Tree tree;
      int i=0;
      do
        {
           if(i==0)
             {
 		cout<<"\n\tEnter Chapter Name";
-  		tr.create();
+  		tree.create();
   		i++;
             }
           if(i==1||i==2)
             {
 		cout<<"\n\tEnter Section Name";
-                tr.create();        
+                tree.create();        
                 i++;
             }
           if(i==3||i==4||i==5||i==6)
             {
 		cout<<"\n\tEnter Sub-Section Name";
-                tr.create();        
+                tree.create();        
                 i++;
              }
 	   if(i==7)
              {
                cout<<"\n tree is:";
-		tr.display();
+		tree.display();
                 break;
              }
       }while(1);
